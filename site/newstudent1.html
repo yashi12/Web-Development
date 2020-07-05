@@ -1,0 +1,136 @@
+<html>
+
+<head>
+    <style>
+        .req {
+            color:darkred;
+        }
+    </style>
+    <script>
+        function validateform() {
+            //validate enrollment number
+            var en = document.StudentForm.StudentEnrollNo.value;
+            if (en[0] == 9 && en[1] == 9) {
+                if (en.length != 10) {
+                    alert('plz enter valid enrollment number');
+                    return false;
+                }
+            } else {
+                if (en.length != 8) {
+                    alert('plz enter valid enrollment number');
+                    return false;
+                }
+            }
+
+            //validate phone number
+            var num = document.StudentForm.StudentPhoneNo.value.length;
+            if (num != 10) {
+                alert('plz enter valid phone number');
+                return false;
+            }
+            //validate password
+
+            var ps = document.StudentForm.StudentPassword.value;
+            var cps=document.StudentForm.StudentConfirmPassword.value;
+            var n = ps.localeCompare(cps);
+            var strength2 = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8}$/;
+            if (!ps.match(strength2)) {
+                alert('invalid password max length (8) at least one capital and one small alhabet is required and at east one digit');
+                return false;
+            }
+            if(n!=0){
+                alert('the password do not match');
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+    <link rel="stylesheet" type="text/css" href="LogInStyle.css">
+    <link rel="stylesheet" type="text/css" href="y1maincss.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body style="background-color: rgba(33, 166, 206, 0.8)">
+    <nav class="navbar navbar-expand-sm fixed-top navbar-dark background">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar1">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="y1main.html">HOME</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#HowItWorksLink">HOW IT WORKS</a>
+                    </li>
+                    <li class="nav-item active">
+                        <div class="dropdown">
+                            <a href="#" class="nav-link active dropdown-toggle " data-toggle="dropdown">LOGIN</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="StudentLogIn.html">Student LogIn</a></li>
+                                <li><a href="AdminLogIn.html">Admin LogIn</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Feedback.html">FEEDBACK</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link btn " href="ContactUs.html">CONTACT US</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 style="text-align: center ; margin-top: 70px;">Write Student Credentials</h1>
+        <div class="row" style="margin-top: 40px">
+            <div class="col"></div>
+            <form method="post" action="" onsubmit=" return validateform()" name="StudentForm" class="col">
+
+                <div>
+                    <div class="form-group ">
+                        <i class="fas fa-user-circle"></i>
+                        <label>Student Name : </label>
+                        <input type="text" name="StudentName" class="form-control" maxlength="20">
+                        <i class="fas fa-id-card"></i>
+                        <label>Enrollment No : </label><span class="req">* </span>
+                        <input type="number" name="StudentEnrollNo" class="form-control" maxlength="20" required>
+                        <i class="fas fa-envelope"></i>
+                        <label>Email : </label><span class="req">* </span>
+                        <input type="email" name="StudentEmail" class="form-control" maxlength="30" required>
+                        <i class="fas fa-mobile"></i>
+                        <label>Phone No : </label><span class="req">* </span>
+                        <input type="number" class="form-control" name="StudentPhoneNo" required>
+                        <i class="fas fa-lock"></i>
+                        <label>Password:</label><span class="req">* </span>
+                        <input type="password" maxlength="20" class="form-control" name="StudentPassword" required>
+                        <i class="fas fa-lock"></i>
+                        <label>Confirm Password:</label><span class="req">* </span>
+                        <input type="password" maxlength="20" class="form-control" name="StudentConfirmPassword" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+            <div class="col"></div>
+        </div>
+    </div>
+</body>
+
+</html>
