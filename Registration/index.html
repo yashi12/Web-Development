@@ -15,105 +15,116 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-    <!--link rel="stylesheet" type="text/css" href="RegistrationCss.css"-->
+    <link rel="stylesheet" type="text/css" href="RegistrationCss.css">
 
     <style>
         .req {
-            color:darkred;
+            color: darkred;
         }
     </style>
     <script>
         function validateform() {
-            //validate enrollment number
-            var en = document.StudentForm.StudentEnrollNo.value;
-            if (en[0] == 9 && en[1] == 9) {
-                if (en.length != 10) {
-                    alert('plz enter valid enrollment number');
-                    return false;
-                }
-            } else {
-                if (en.length != 8) {
-                    alert('plz enter valid enrollment number');
-                    return false;
-                }
-            }
 
             //validate password
 
             var ps = document.StudentForm.StudentPassword.value;
-            var cps=document.StudentForm.StudentConfirmPassword.value;
+            var cps = document.StudentForm.StudentConfirmPassword.value;
             var n = ps.localeCompare(cps);
             var strength2 = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8}$/;
             if (!ps.match(strength2)) {
-                alert('invalid password max length (8) at least one capital and one small alhabet is required and at east one digit');
+                alert(
+                    'invalid password max length (8) at least one capital and one small alhabet is required and at east one digit');
                 return false;
             }
-            if(n!=0){
+            if (n != 0) {
                 alert('the password do not match');
                 return false;
             }
+
             return true;
+
         }
+
     </script>
 </head>
 
-<body style="background-color:#616161; ">
+<body style="background-color:#424242;">
 
     <div class="contxainer">
-        <h1 style="text-align: center ; margin-top: 9%; color: #FAFAFA;">Registration Form</h1>
+        <h1 style="margin-left: 30px; margin-top: 5%; color: #FAFAFA;">Registration Form</h1>
         <div class="row" style="margin: 30px; ">
-            <div class="col-sm-6" style="margin-right:0px; padding-left: 0px; padding-right: 0px; opacity: 0.6;">
-                <img src="images.jpg" height="100%" width="100%"> 
+            <div class="col-sm-5" style="margin-right:0px; padding-left: 0px; padding-right: 0px; opacity: 0.5; ">
+                <img src="images11.jpeg" height="100%" width="100%">
             </div>
-            <form method="post" action="" onsubmit=" return validateform()" name="StudentForm" class="col-sm-6" style="margin:0px;padding-left: 0px; ">
+            <form method="post" action="" onsubmit=" return validateform()" name="StudentForm"
+                class="col-sm-6 needs-validation" style="margin:0px;padding-left: 0px; ">
 
-                <div style="background-color:#E8EAF6;">
+                <div style="background-color:#E8EAF6; opacity: 1.0;">
                     <div class="form-group " style="width: 70%; margin-left: 10%;">
                         <i class="fas fa-user-circle" style="margin-top: 4%;"></i>
-                        <label style="margin-top: 4%;">Name : </label>
-                        <input type="text" name="StudentName" class="form-control" maxlength="35" >
+                        <label style="margin-top: 4%;" for="validationCustom01">Name : </label>
+                        <input type="text" name="StudentName" class="form-control" maxlength="35"
+                            placeholder="Your Name" >
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                         <i class="fas fa-id-card" style="margin-top: 4%;"></i>
                         <label style="margin-top: 4%;">Roll Number : </label><span class="req">* </span>
-                        <input type="number" name="StudentEnrollNo" class="form-control" maxlength="10" required>
+                        <input type="number" name="StudentEnrollNo" class="form-control" maxlength="10" minlength="5" required placeholder="18804034">
                         <i class="fas fa-envelope" style="margin-top: 4%;"></i>
                         <label style="margin-top: 4%;">Email : </label><span class="req">* </span>
-                        <input type="email" name="StudentEmail" class="form-control" maxlength="30" required>
+                        <input type="email" name="StudentEmail" class="form-control" maxlength="30" required placeholder="abc@gmail.com">
 
                         <div class="row" style="margin-top: 4%;">
-                            <div class="col-sm-4 dropdown" >
-                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" name="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Branch
-                                </button><span class="req">* </span>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a class="dropdown-item" href="#" value="cs" onclick="displayDate()">Computer Science </a>
-                                  <a class="dropdown-item" href="#">Biothech</a>
-                                  <a class="dropdown-item" href="#">Chemical</a>
-                                </div>
+                            <div class="col-sm-4 dropdown">
+                                <label for="exampleDropdownFormEmail1">Branch</label><span class="req">* </span>
+                                <select class="btn btn-secondary btn-sm dropdown-toggle" required name="branch">
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                                        <option class="dropdown-item" value="cs" >Computer
+                                            Science </option>
+                                        <option class="dropdown-item" value="bt" >Biothech</option>
+                                        <option class="dropdown-item" value="ch">Chemical</option>
+                                        <div class="dropdown-divider"></div>
+                                        <option class="dropdown-item" value="ot">Others</option>
+                                    </div>
+                                </select>
                             </div>
 
-                            <div class="col-sm-4 dropdown" >
-                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" name="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Experience
-                                  </button>
-                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">No experience</a>
-                                    <a class="dropdown-item" href="#">1 year</a>
-                                    <a class="dropdown-item" href="#">2 year</a>
-                                    <a class="dropdown-item" href="#">>= 2 year</a>
-                                  </div>
+                            <div class="col-sm-4 dropdown">
+                                <label for="exampleDropdownFormEmail1">Experience</label><span class="req">* </span>
+                                <select class="btn btn-secondary btn-sm dropdown-toggle"  required>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <div class="form-group">
+                                            <option class="dropdown-item" value="0" name="zero" >No experience</option>
+                                            <option class="dropdown-item" value="1" name="one" disabled>1 year</option>
+                                            <option class="dropdown-item" value="2" name="two" disabled>2 year</option>
+                                            <option class="dropdown-item" value="more" name="more" disabled> more than 2 years</option>
+                                        </div>
+                                    </div>
+                                </select>
                             </div>
                         </div>
                         <i class="fas fa-lock" style="margin-top: 4%;"></i>
                         <label style="margin-top: 4%;">Password:</label><span class="req">* </span>
-                        <input type="password" maxlength="20" class="form-control" name="StudentPassword" required>
-                        <small id="passHelp" class="form-text text-muted">max length (8) at least one capital, one small alhabet and one digit is required </small>
+                        <input type="password" maxlength="20" class="form-control" name="StudentPassword" required placeholder="Abcd1234" >
+                        
+                        <small id="passHelp" class="form-text text-muted">max length (8) at least one capital, one small
+                            alhabet and one digit is required </small>
                         <i class="fas fa-lock" style="margin-top: 4%;"></i>
                         <label style="margin-top: 4%;">Confirm Password:</label><span class="req">* </span>
-                        <input type="password" maxlength="20" class="form-control" name="StudentConfirmPassword" required>
+                        <input type="password" maxlength="20" class="form-control" name="StudentConfirmPassword"
+                            required>
+                        <div>
+                            <br>
+                            <label style="margin-top: 4%;" for="myfile">Select Resume:</label>
+                            <br>
+                            <input type="file" id="myfile" name="myfile"><br><br>
+                        </div>
 
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style=" margin-left: 10%; margin-bottom: 2%;">Submit</button>
+                    <button type="submit" class="btn btn-primary"
+                        style=" margin-left: 10%; margin-bottom: 2%;">Submit</button>
                 </div>
             </form>
             <div class="col"></div>
