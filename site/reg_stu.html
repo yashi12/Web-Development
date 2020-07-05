@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="LogInStyle.css">
+    <link rel="stylesheet" type="text/css" href="y1maincss.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body style="background-color:#424242; opacity: 0.6;">
+
+    <div class="container">
+        <h1 style="text-align: center ; margin-top: 70px; color: ;">Write Student Credentials</h1>
+        <div class="row" style="margin-top: 40px">
+            <div class="col-sm-6">
+                <img src="" height="100%" width="100%">
+            </div>
+            <form method="post" action="" id="StudentForm" class="col-sm-6">
+
+                <div>
+                    <div class="form-group ">
+                        <i class="fas fa-user-circle"></i>
+                        <label>Admin Name : </label>
+                        <input type="text" id="NewAdminName" class="form-control" maxlength="20">
+                        <i class="fas fa-id-card"></i>
+                        <label>Staff ID : </label>
+                        <input type="text" id="StaffID" class="form-control" maxlength="20">
+                        <i class="fas fa-envelope"></i>
+                        <label>Phone No : </label>
+                        <input type="text" class="form-control" maxlength="20" id="AdminPhoneNo">
+
+                        <i class="fas fa-lock"></i>
+                        <label>Password:</label>
+                        <input type="password" maxlength="20" class="form-control" id="AdminPassword">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+            <div class="col"></div>
+        </div>
+    </div>
+</body>
+
+</html>
