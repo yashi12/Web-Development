@@ -1,0 +1,20 @@
+body{
+   
+}
+#header-nav{
+    height: fit-content;
+    background-color: #37474F;
+    color: #FAFAFA;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.navbar-brand{
+    color: #FAFAFA;
+    font-family: 'Indie Flower', cursive;
+    font-size:xx-large;
+    text-shadow: #F5F5F5;
+}
+.nav-item{
+    font-size: large;
+    color: #FFFFFF;
+}
