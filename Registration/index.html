@@ -22,6 +22,7 @@
             color: darkred;
         }
     </style>
+    <script src="script.js"></script>
     <script>
         function validateform() {
 
@@ -45,11 +46,16 @@
 
         }
         function enable(){
-            
-            document.StudentForm.one.disabled = false;
+            var op = document.getElementsByName("branch").getElementsByTagName("option");
+            var 
+            for (var i = 0; i < op.length; i++) {
+                // lowercase comparison for case-insensitivity
+                if (op[i].value.toLowerCase() == "cs") {
+                    op[i].disabled = true;
+                }
+            }
         }
-
-
+        
     </script>
 </head>
 
@@ -81,11 +87,11 @@
                         <input type="email" name="StudentEmail" class="form-control" maxlength="30" required placeholder="abc@gmail.com">
 
                         <div class="row" style="margin-top: 4%;">
-                            <div class="col-sm-4 dropdown">
-                                <label>Branch</label><span class="req">* </span>
+                            <div class="col-sm-12 col-md-12 col-lg-4 dropdown">
+                                <label>Branch</label><span class="req">* </span><br class="hidden-xs">
                                 <select class="btn btn-secondary btn-sm dropdown-toggle" required name="branch">
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                                        <option class="dropdown-item" value="cs" onclick="enable()">Computer
+                                        <option class="dropdown-item" value="cs" >Computer
                                             Science </option>
                                         <option class="dropdown-item" value="bt" >Biothech</option>
                                         <option class="dropdown-item" value="ch">Chemical</option>
@@ -95,8 +101,8 @@
                                 </select>
                             </div>
 
-                            <div class="col-sm-4 dropdown">
-                                <label>Experience</label><span class="req">* </span>
+                            <div class="col-sm-12 col-md-12 col-lg-4 dropdown change_ori">
+                                <label>Experience</label><span class="req">* </span><br class="hidden-xs">
                                 <select class="btn btn-secondary btn-sm dropdown-toggle"  required>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <div class="form-group">
