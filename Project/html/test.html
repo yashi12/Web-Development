@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+    function call(){
+        var options = document.getElementById("cars1");
+        options.disabled = false;
+        for(var i=0;i<options.length;i++){
+          options[i].disabled=true;
+        }
+        document.getElementById("cars1")[1].disabled = false;
+        // document.getElementById("test").textContent = document.getElementById("cars")[1].value;
+    }
+</script>
+<script src="../js/script.js">
+</script>
+
+<h1>The select disabled attribute</h1>
+<p>The disabled attribute specifies that the drop-down list should be disable:</p>
+
+<p onmouseover="func(1,5,9)">hello world</p>
+<form>
+    
+  <label for="cars">Choose a car:</label>
+  <select name="cars" id="cars" onchange="call();">
+    <option>Cars</option>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+  <select name="cars" id="cars1" disabled >
+    <option>Second</option>
+    <option value="volvo">Volvo1</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+  <br><br>
+  <button onclick="call();return false;">click</button>
+  <p id="test"></p>
+  <input type="submit" value="Submit" >
+</form>
+
+</body>
+</html>
