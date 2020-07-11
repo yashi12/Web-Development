@@ -24,6 +24,7 @@ function validateform() {
 
 function enableDegree() {
     let br= document.getElementById("branch");
+    br[0].disabled=true;
     var options = document.getElementById("degree");
     options.selectedIndex =0;
     options.disabled = false;
