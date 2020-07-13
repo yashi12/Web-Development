@@ -58,8 +58,16 @@ var updateClock = (timeDifference) => {
     $("#seconds").text(padNumber(secs));
 }
 
+<<<<<<< HEAD
 
 // if there is a single digit left like 2 seconds append zero to it ie 02
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> bcff3bd9b1d902d19e8d5057cce4d6ad91641b7f
+// if there is a single digit left like 2 seconds append zero to it make 02
+>>>>>>> 13e7574ada579cffe80425db6323f44b03e398fa
 var padNumber = (number) => {
     var paddedNumber = number;
     if (number < 10) {
