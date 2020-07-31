@@ -1,0 +1,17 @@
+body {
+    background-color: #424242;;
+}
+
+.dropdown-item {
+    background-color: #ECEFF1;
+}
+
+.req {
+    color: darkred;
+}
+
+h1 {
+    margin-left: 30px;
+    margin-top: 5%;
+    color: #FAFAFA;
+}

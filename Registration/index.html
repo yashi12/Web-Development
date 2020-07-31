@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- font-awsome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!--    custom css-->
+    <link rel="stylesheet" type="text/css" href="registrationForm.css">
+
+</head>
+
+<body>
+
+<div>
+    <h1>Registration Form</h1>
+    <div class="row" style="margin: 30px; ">
+        <div class="col-sm-5" style="margin-right:0px; padding-left: 0px; padding-right: 0px; opacity: 0.5; ">
+            <img src="images/registrationFormSide.jpeg" height="100%" width="100%">
+        </div>
+        <form name="StudentForm" method="post" action="" onsubmit="return validateform()" novalidate
+              class="col-sm-6 needs-validation css-form" style="margin:0px;padding-left: 0px; ">
+
+            <div style="background-color:#E8EAF6; opacity: 1.0;">
+                <div class="form-group " style="width: 70%; margin-left: 10%;">
+                    <i class="fas fa-user-circle" style="margin-top: 4%;"></i>
+                    <label style="margin-top: 4%;">Name : </label>
+                    <input type="text" name="StudentName" class="form-control" maxlength="35"
+                           placeholder="Your Name">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <i class="fas fa-id-card" style="margin-top: 4%;"></i>
+                    <label style="margin-top: 4%;">Roll Number : </label><span class="req">* </span>
+                    <input type="number" name="StudentEnrollNo" class="form-control" maxlength="10" minlength="5"
+                           required placeholder="18804034">
+                    <i class="fas fa-envelope" style="margin-top: 4%;"></i>
+                    <label style="margin-top: 4%;">Email : </label><span class="req">* </span>
+                    <input type="email" name="StudentEmail" class="form-control" maxlength="30" required
+                           placeholder="abc@gmail.com">
+
+                    <div class="row" style="margin-top: 4%;">
+                        <div class="col-sm-12 col-md-12 col-lg-4 dropdown">
+                            <label>branch</label><span class="req">* </span><br class="hidden-xs">
+                            <select id="branch" class="btn btn-secondary btn-sm dropdown-toggle" required
+                                    onchange="enableDegree();">
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <option class="dropdown-item">None</option>
+                                    <option class="dropdown-item" value="cs">Computer Science</option>
+                                    <option class="dropdown-item">Commerce</option>
+                                </div>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12 col-lg-4 dropdown change_ori">
+                            <label>Degree</label><span class="req">* </span><br class="hidden-xs">
+                            <select id="degree" class="btn btn-secondary btn-sm dropdown-toggle" required disabled>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <div class="form-group">
+                                        <option class="dropdown-item">None</option>
+                                        <option class="dropdown-item" value="0">Btech</option>
+                                        <option class="dropdown-item" value="1">Mtech</option>
+                                        <option class="dropdown-item" value="2">BBA</option>
+                                        <option class="dropdown-item" value="more">MBA</option>
+                                    </div>
+                                </div>
+                            </select>
+                        </div>
+                    </div>
+                    <i class="fas fa-lock" style="margin-top: 4%;"></i>
+                    <label style="margin-top: 4%;">Password:</label><span class="req">* </span>
+                    <input type="password" maxlength="20" class="form-control" name="StudentPassword" required
+                           placeholder="Abcd1234">
+
+                    <small id="passHelp" class="form-text text-muted">max length (8) at least one capital, one small
+                        alhabet and one digit is required </small>
+                    <i class="fas fa-lock" style="margin-top: 4%;"></i>
+                    <label style="margin-top: 4%;">Confirm Password:</label><span class="req">* </span>
+                    <input type="password" maxlength="20" class="form-control" name="StudentConfirmPassword"
+                           required>
+                    <div>
+                        <br>
+                        <label style="margin-top: 4%;" for="myfile">Select Resume:</label>
+                        <br>
+                        <input type="file" id="myfile" name="myfile"><br><br>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary"
+                        style=" margin-left: 10%; margin-bottom: 2%;">Submit
+                </button>
+            </div>
+        </form>
+        <div class="col"></div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</body>
+
+</html>
