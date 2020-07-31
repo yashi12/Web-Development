@@ -35,3 +35,7 @@ img{
 .input-field{
     margin-top: 4%;
 }
+div[contentEditable] {
+    cursor: pointer;
+    background-color: #D0D0D0;
+}

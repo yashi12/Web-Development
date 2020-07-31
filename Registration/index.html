@@ -1,4 +1,4 @@
-<html>
+<html ng-app="registrationForm">
 
 <head>
     <!-- Latest compiled and minified CSS -->
@@ -24,7 +24,7 @@
 
 </head>
 
-<body ng-app="registrationForm">
+<body  ng-controller="FormController as vm">
 
 <div>
     <h1>Registration Form</h1>
@@ -32,34 +32,34 @@
         <div class="col-sm-5" style="margin-right:0px; padding-left: 0px; padding-right: 0px; opacity: 0.5; ">
             <img src="images/registrationFormSide.jpeg">
         </div>
-        <form name="form" novalidate
+        <form name="form " novalidate
               class="col-sm-6  css-form">
-            <div ng-controller="FormController as vm">
-                <div class="form-group">
+            <div >
+                <div class="form-group" >
                     <div class="input-field">
                         <i class="fas fa-user-circle"></i>
                         <label>Name : </label>
-                        <input type="text" ng-model="name" class="form-control"
+                        <input type="text" ng-model="name" class="form-control" name="name"
                                placeholder="Your Name">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-id-card"></i>
                         <label>Roll Number : </label>
-                        <input type="number" ng-model="vm.enrollNumber"
-                               name="uEnrollNumber" class="form-control"
-                               placeholder="18804034" ng-maxlength="10" enrollNumber required>
-                        <div ng-show="form.uEnrollNumber.$pending.enrollNumber">
-                            <span>Checking if already exists...</span></div>
-                        <div ng-show="form.uEnrollNumber.$touched || form.$submitted">
-                            <div ng-show="form.uEnrollNumber.$error.enrollNumber">
-                                <span> This Enroll already exists...</span></div>
-                            <div ng-show="form.uEnrollNumber.$error.required">
+                        <div ng-show="form.enrollNumber.$touched || form.$submitted">
+                            <div ng-show="form.enrollNumber.$error.required">
                                 <span class="req">* Enroll is required</span>
                             </div>
-                            <div ng-show="form.uEnrollNumber.$error.maxlength">
+                            <div ng-show="form.enrollNumber.$error.maxlength">
                                 <span class="req">* Invalid Enroll</span>
                             </div>
                         </div>
+                        <input  type="number" ng-model="vm.enrollNumber"
+                               name="enrollNumber" class="form-control"
+                               placeholder="18804034" ng-maxlength="10"  required enrollNumber >
+                        <div ng-show="form.enrollNumber.$pending.enrollNumber">
+                            <span>Checking if already exists...</span></div>
+                        <div ng-show="form.enrollNumber.$error.enrollNumber">
+                            <span> This Enroll already exists...</span></div>
 
                     </div>
                     <div class="input-field">
@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <input type="email" name="email" class="form-control" ng-model="vm.uEmail"
-                               placeholder="abc@gmail.com" overwrite-email required>
+                               placeholder="abc@td.com" overwrite-email required>
                     </div>
 
                     <div class="row input-field">
@@ -128,19 +128,41 @@
                         <i class="fas fa-lock"></i>
                         <label>Confirm Password:</label>
                         <span class="req">* </span>
-                        <input type="password" ng-model="confirmPassword" class="form-control" name="uPassword"
-                               required ng-maxlength="8" password>
-
+                        <input type="password" ng-model="vm.confirmPass" class="form-control" name="uPassword"
+                                ng-maxlength="8"  required >
+                        <div ng-show="form.uPassword.$touched || form.$submitted">
+                            <div ng-show="form.uPassword.$error.required"><span class="req">Password is required</span></div>
+                            <div ng-show="vm.confirmPassword()">
+                                <span class="req"> Invalid Password</span>
+                            </div>
+                        </div>
                     </div>
+                    <div class="input-field">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+                            <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                        </div>
+                    </div>
+                    <h6 class="input-field">Hobbies:</h6>
+                    <div contentEditable="true" ng-model="vm.content" title="Click to edit">coding</div>
                     <div>
                         <br>
                         <label class="input-field" for="myfile">Select Resume:</label>
                         <br>
                         <input type="file" id="myfile" name="myfile"><br><br>
                     </div>
+                    <p align="right">I enjoy {{vm.content}}</p>
 
                 </div>
-                <button type="submit" class="btn btn-primary"
+                <button type="submit" class="btn btn-primary" ng-show=""
                         style=" margin-left: 10%; margin-bottom: 2%;">Submit
                 </button>
             </div>
@@ -156,6 +178,7 @@
 <script src="overwrite-email.directive.js"></script>
 <script src="enrollNumber.directive.js"></script>
 <script src="password.directive.js"></script>
+<script src="contentEditable.directive.js"></script>
 <script src="js/script.js"></script>
 
 </body>

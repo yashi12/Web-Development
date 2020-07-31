@@ -13,8 +13,12 @@ function password() {
     return directive;
 
     function link(scope, elm, attrs, ctrl) {
-        ctrl.$validators.password = function (modelValue,viewValue) {
+        ctrl.$validators.password= function (modelValue,viewValue) {
             return ctrl.$isEmpty(modelValue) || PASS_REGEXP.test(modelValue);
+        }
+        console.log(elm);
+        ctrl.$validators.confirmPassword = function (modelValue,viewValue) {
+
         }
     }
 }

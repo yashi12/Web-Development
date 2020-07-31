@@ -17,11 +17,11 @@ function enrollNumber($q, $timeout) {
         let enrollNumberList = [18803033, 18803034, 18803035];
 
         ctrl.$asyncValidators.enrollNumber = function (modelValue, viewValue) {
-            let def = $q.defer();
 
             if (ctrl.$isEmpty(modelValue)) {
                 return $q.resolve();
             }
+            let def = $q.defer();
             $timeout(function () {
                 if (enrollNumberList.indexOf(modelValue) === -1) {
                     def.resolve();
@@ -30,7 +30,7 @@ function enrollNumber($q, $timeout) {
                 }
             }, 2000);
             return def.promise;
-        }
+        };
 
     }
 }
