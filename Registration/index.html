@@ -24,7 +24,7 @@
 
 </head>
 
-<body  ng-controller="FormController as vm">
+<body ng-controller="FormController as vm">
 
 <div>
     <h1>Registration Form</h1>
@@ -32,30 +32,31 @@
         <div class="col-sm-5" style="margin-right:0px; padding-left: 0px; padding-right: 0px; opacity: 0.5; ">
             <img src="images/registrationFormSide.jpeg">
         </div>
-        <form name="form " novalidate
-              class="col-sm-6  css-form">
-            <div >
-                <div class="form-group" >
+        <form name="form "
+              class="col-sm-6  css-form" novalidate>
+            <div>
+                <div class="form-group">
                     <div class="input-field">
                         <i class="fas fa-user-circle"></i>
                         <label>Name : </label>
                         <input type="text" ng-model="name" class="form-control" name="name"
                                placeholder="Your Name">
+                        <label>
+
                     </div>
                     <div class="input-field">
                         <i class="fas fa-id-card"></i>
-                        <label>Roll Number : </label>
+                        <label>Roll Number : </label><span class="req">* </span>
                         <div ng-show="form.enrollNumber.$touched || form.$submitted">
                             <div ng-show="form.enrollNumber.$error.required">
-                                <span class="req">* Enroll is required</span>
+                                <span class="req">Enroll is required</span>
                             </div>
                             <div ng-show="form.enrollNumber.$error.maxlength">
-                                <span class="req">* Invalid Enroll</span>
+                                <span class="req">Invalid Enroll</span>
                             </div>
                         </div>
-                        <input  type="number" ng-model="vm.enrollNumber"
-                               name="enrollNumber" class="form-control"
-                               placeholder="18804034" ng-maxlength="10"  required enrollNumber >
+                        <input type="number" name="enrollNumber" class="form-control" ng-model="vm.enrollNumber"
+                               placeholder="18804034" ng-maxlength="10" enroll-num required/>
                         <div ng-show="form.enrollNumber.$pending.enrollNumber">
                             <span>Checking if already exists...</span></div>
                         <div ng-show="form.enrollNumber.$error.enrollNumber">
@@ -107,48 +108,53 @@
                         <!--                            </select>-->
                         <!--                        </div>-->
                     </div>
-                    <div class="input-field" >
+                    <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <label>Password:</label>
                         <span class="req">* </span>
                         <div ng-show="form.password.$touched || form.$submitted">
-                            <div ng-show="form.password.$error.required"><span class="req">Password is required</span></div>
+                            <div ng-show="form.password.$error.required"><span class="req">Password is required</span>
+                            </div>
                             <div ng-show="form.password.$error.password">
                                 <span class="req"> Invalid Password</span>
                             </div>
                         </div>
-                        <input type="password" name="password" ng-model="vm.uPassword" class="form-control"
-                               placeholder="Abcd1234" password required >
+                        <input type="password" name="password" ng-model="vm.originalPassword" class="form-control"
+                               placeholder="Abcd1234" password required>
                         <small id="passHelp" class="form-text text-muted">min length (5) at least one capital, one small
                             alhabet and one digit is required </small>
-<!--                        <p ng-show="form.uPassword.$error.required && (form.uPassword.$touched || submitted)"-->
-<!--                           class="help-block">You password is required.</p>-->
+                        <!--                        <p ng-show="form.uPassword.$error.required && (form.uPassword.$touched || submitted)"-->
+                        <!--                           class="help-block">You password is required.</p>-->
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <label>Confirm Password:</label>
                         <span class="req">* </span>
-                        <input type="password" ng-model="vm.confirmPass" class="form-control" name="uPassword"
-                                ng-maxlength="8"  required >
-                        <div ng-show="form.uPassword.$touched || form.$submitted">
-                            <div ng-show="form.uPassword.$error.required"><span class="req">Password is required</span></div>
-                            <div ng-show="vm.confirmPassword()">
+                        <input type="password" ng-model="vm.confirmPass" class="form-control" name="confirmPass" compare-to="vm.originalPassword"
+                               ng-maxlength="8" required>
+                        <div ng-show="form.confirmPass.$touched || form.$submitted">
+                            <div ng-show="form.confirmPass.$error.required"><span class="req">Password is required</span>
+                            </div>
+                            <div ng-show="form.confirmPass.$error.compareTo">
                                 <span class="req"> Invalid Password</span>
                             </div>
                         </div>
                     </div>
                     <div class="input-field">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                   value="option1" required>
                             <label class="form-check-label" for="inlineRadio1">1</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                   value="option2" required>
                             <label class="form-check-label" for="inlineRadio2">2</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
-                            <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                                   value="option3"  required>
+                            <label class="form-check-label" for="inlineRadio3">3 </label>
                         </div>
                     </div>
                     <h6 class="input-field">Hobbies:</h6>
@@ -162,7 +168,7 @@
                     <p align="right">I enjoy {{vm.content}}</p>
 
                 </div>
-                <button type="submit" class="btn btn-primary" ng-show=""
+                <button type="submit" class="btn btn-primary"
                         style=" margin-left: 10%; margin-bottom: 2%;">Submit
                 </button>
             </div>
@@ -175,10 +181,11 @@
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ladda/0.4.3/angular-ladda.min.js"></script>-->
 <script src="registration.module.js"></script>
 <script src="registration.controller.js"></script>
-<script src="overwrite-email.directive.js"></script>
-<script src="enrollNumber.directive.js"></script>
-<script src="password.directive.js"></script>
-<script src="contentEditable.directive.js"></script>
+<script src="registrationDirectives/overwrite-email.directive.js"></script>
+<script src="registrationDirectives/enrollNumber.directive.js"></script>
+<script src="registrationDirectives/password.directive.js"></script>
+<script src="registrationDirectives/contentEditable.directive.js"></script>
+<!--<script src="confirmPassword.directive.js"></script>-->
 <script src="js/script.js"></script>
 
 </body>

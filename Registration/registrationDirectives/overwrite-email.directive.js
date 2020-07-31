@@ -14,6 +14,11 @@ function overwriteEmail() {
 
     function link(scope, elm, attrs, ctrl) {
         ctrl.$validators.email = function (modelValue) {
+            if(!ctrl.$isEmpty(modelValue)){
+                let name = modelValue.substring(0, modelValue.indexOf('@'));
+                console.log(name);
+
+            }
             return ctrl.$isEmpty(modelValue) || EMAIL_REGEXP.test(modelValue);
         }
     }

@@ -2,25 +2,24 @@ angular
     .module('registrationForm')
     .controller('FormController', FormController);
 
-FormController.$inject = ['$timeout'];
+// FormController.$inject = ['$timeout'];
 
-function FormController($timeout) {
+function FormController() {
     const vm = this;
-    vm.confirmPassword = confirmPassword;
-
-    function confirmPassword() {
-        if (vm.password === vm.confirmPass) {
-            return true;
-        }
-        return false;
-    }
-
-    // vm.clickBtn = clickBtn;
+    vm.user = {
+        password: "",
+        confirmPassword: ""
+    };
     //
-    // function clickBtn() {
-    //     vm.loading = true; // start loading
-    //     $timeout(function() {
-    //         vm.loading = false; // stop loading
-    //     }, 2000);
+    // function confirmPassword() {
+    //     if (vm.originalPassword === vm.confirmPass) {
+    //         console.log(vm.originalPassword,vm.confirmPass);
+    //         console.log("true");
+    //         return true;
+    //     }
+    //     console.log(vm.originalPassword,vm.confirmPass);
+    //     console.log("false");
+    //     return false;
     // }
+
 }

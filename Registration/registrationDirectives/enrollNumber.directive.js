@@ -1,11 +1,11 @@
 angular
     .module('registrationForm')
-    .directive('enrollNumber', enrollNumber);
+    .directive('enrollNum', enrollNum);
 
-enrollNumber.$inject = ['$q', '$timeout'];
+enrollNum.$inject = ['$q', '$timeout'];
 
-function enrollNumber($q, $timeout) {
-    console.log("enroll dir");
+function enrollNum($q, $timeout) {
+
     let directive = {
         require: 'ngModel',
         link: link,
@@ -28,7 +28,8 @@ function enrollNumber($q, $timeout) {
                 } else {
                     def.reject();
                 }
-            }, 2000);
+            }, 5000);
+
             return def.promise;
         };
 
