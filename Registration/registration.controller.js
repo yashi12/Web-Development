@@ -18,7 +18,8 @@ function FormController() {
     vm.checkIfEmailPresent = checkIfEmailPresent;
 
     function setName() {
-        if (vm.user.nameEntered == false && vm.user.email.length > 0) {
+        console.log(typeof (vm.user.email));
+        if (vm.user.nameEntered == false && (vm.user.email!="" && typeof(vm.user.email)!=='undefined')) {
             let name = vm.user.email.substring(0, vm.user.email.indexOf('@'));
             console.log(name);
             vm.user.name = name;
@@ -34,7 +35,7 @@ function FormController() {
     }
 
     function checkIfEmailPresent() {
-        if (vm.user.email != "" && vm.user.name == "") {
+        if (vm.user.email != "" && vm.user.name == "" && typeof(vm.user.email)!=='undefined') {
             let name = vm.user.email.substring(0, vm.user.email.indexOf('@'));
             vm.user.name = name;
         }
