@@ -8,19 +8,20 @@ function compareTo() {
         require: "ngModel",
         scope:
             {
-                confirmPassword: "=compareTo"
+                compareTo: "="
             },
-        link: function (scope, element, attributes, modelVal)
+        link: function (scope, element, attributes, ctrl)
         {
 
-            modelVal.$validators.compareTo = function (val)
+            ctrl.$validators.compareTo = function (ctrl)
             {
-                console.log("val",val);
-                return val == scope.confirmPassword;
+                console.log("ctrl",ctrl);
+                console.log("ori",scope.compareTo);
+                return ctrl == scope.compareTo;
             };
-            scope.$watch("confirmPassword", function ()
+            scope.$watch('compareTo', function ()
             {
-                modelVal.$validate();
+                ctrl.$validate();
             });
         }
     };

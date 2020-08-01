@@ -117,7 +117,7 @@
                                 <span class="req"> Invalid Password</span>
                             </div>
                         </div>
-                        <input type="password" name="password" ng-model="vm.originalPassword" class="form-control"
+                        <input type="password" name="password" ng-model="vm.user.originalPassword" class="form-control"
                                placeholder="Abcd1234" password required>
                         <small id="passHelp" class="form-text text-muted">min length (5) at least one capital, one small
                             alhabet and one digit is required </small>
@@ -127,8 +127,8 @@
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <label>Confirm Password:</label>
-                        <span class="req">* </span>
-                        <input type="password" ng-model="vm.confirmPass" class="form-control" name="confirmPass" compare-to="vm.originalPassword"
+                        <span class="req">*  </span>
+                        <input type="password" ng-model="vm.confirmPass" class="form-control" name="confirmPass" compare-to="vm.user.originalPassword"
                                ng-maxlength="8" required>
                         <div ng-show="form.confirmPass.$touched || form.$submitted">
                             <div ng-show="form.confirmPass.$error.required"><span class="req">Password is required</span>
@@ -161,7 +161,8 @@
                         <br>
                         <label class="input-field" for="myfile">Select Resume:</label>
                         <br>
-                        <input type="file" id="myfile" name="myfile" check-file-size=""><br><br>
+                        <input type="file" id="myfile" name="myfile" check-file-size="" ng-model="vm.user.fileSize" ><br><br>
+                        <p>{{vm.user.fileSize}}</p>
                     </div>
                     <p align="right">I enjoy {{vm.content}}</p>
 

@@ -10,8 +10,9 @@ function FormController() {
         name: "",
         nameEntered: false,
         email: "",
-        password: "",
-        confirmPassword: ""
+        confirmPassword: "",
+        originalPassword:"",
+        fileSize:""
     };
     vm.setName = setName;
     vm.setIfNameEntered = setIfNameEntered;
