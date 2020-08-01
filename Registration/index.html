@@ -39,10 +39,8 @@
                     <div class="input-field">
                         <i class="fas fa-user-circle"></i>
                         <label>Name : </label>
-                        <input type="text" ng-model="name" class="form-control" name="name"
+                        <input type="text" ng-model="vm.user.name" class="form-control" name="name" ng-blur="vm.setIfNameEntered(); vm.checkIfEmailPresent();"
                                placeholder="Your Name">
-                        <label>
-
                     </div>
                     <div class="input-field">
                         <i class="fas fa-id-card"></i>
@@ -72,7 +70,7 @@
                                 <span class="req"> Invalid Email</span>
                             </div>
                         </div>
-                        <input type="email" name="email" class="form-control" ng-model="vm.uEmail"
+                        <input type="email" name="email" class="form-control" ng-model="vm.user.email" ng-blur="vm.setName();"
                                placeholder="abc@td.com" overwrite-email required>
                     </div>
 
@@ -185,10 +183,9 @@
 <script src="registrationDirectives/enrollNumber.directive.js"></script>
 <script src="registrationDirectives/password.directive.js"></script>
 <script src="registrationDirectives/contentEditable.directive.js"></script>
-<!--<script src="confirmPassword.directive.js"></script>-->
+<script src="confirmPassword.directive.js"></script>
 <script src="js/script.js"></script>
 
-</body>
 
 </body>
 
