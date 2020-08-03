@@ -1,6 +1,6 @@
 angular
     .module('registrationForm')
-    .config('registrationConfig', registrationConfig);
+    .config(registrationConfig);
 
 registrationConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -9,8 +9,8 @@ function registrationConfig($stateProvider,$urlRouterProvider) {
         .state('form',{
             url:'',
             controller:'FormController as vm',
-            template:'<h1>hello</h1>',
-            // templateUrl:'registrationForm.tmpl.html'
+            templateUrl:'dist/registrationForm.tmpl.html',
+            // template:'<h1>hello</h1>',
         });
     $urlRouterProvider.otherwise('');
 }

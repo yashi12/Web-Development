@@ -1,2 +1,2 @@
 angular
-    .module('registrationForm', ['ui.router','ui.bootstrap']);
+    .module('registrationForm', ['ui.router']);
