@@ -6,7 +6,7 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<!--    <script src="node_modules/bootstrap/dist/css/bootstrap.min.css"></script>-->
+    <!--    <script src="node_modules/bootstrap/dist/css/bootstrap.min.css"></script>-->
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -16,193 +16,37 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!--    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
+    <!--    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
 
     <!-- font-awsome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-    <!--    <script>-->
-<!--        var fa = require("fontawesome");-->
-<!--    </script>-->
-
     <!--    custom css-->
-    <link rel="stylesheet" type="text/css" href="../src/registrationForm/registrationForm.css">
+    <link rel="stylesheet" type="text/css" href="../src/registrationForm.css">
 
     <!--    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>-->
 
 </head>
 
-<body >
+<body>
 
-<!--<div ng-controller="FormController as vm">-->
-<!--    <h1>Registration Form</h1>-->
-<!--    <div class="row">-->
-<!--        <div class="col-sm-5" style="margin-right:0px; padding-left: 0px; padding-right: 0px; opacity: 0.5; ">-->
-<!--            <img src="../images/registrationFormSide.jpeg">-->
-<!--        </div>-->
-<!--        <form name="form "-->
-<!--              class="col-sm-6  css-form" novalidate>-->
-<!--            <div>-->
-<!--                <div class="form-group">-->
-<!--                    <div class="input-field">-->
-<!--                        <i class="fas fa-user-circle"></i>-->
-<!--                        <label>Name : </label>-->
-<!--                        <input type="text" ng-model="vm.user.name" class="form-control" name="name" ng-blur="vm.setIfNameEntered(); vm.checkIfEmailPresent();"-->
-<!--                               placeholder="Your Name">-->
-<!--                    </div>-->
-<!--                    <div class="input-field">-->
-<!--                        <i class="fas fa-id-card"></i>-->
-<!--                        <label>Roll Number : </label><span class="req">* </span>-->
-<!--                        <div ng-show="form.enrollNumber.$touched || form.$submitted">-->
-<!--                            <div ng-show="form.enrollNumber.$error.required">-->
-<!--                                <span class="req">Enroll is required</span>-->
-<!--                            </div>-->
-<!--                            <div ng-show="form.enrollNumber.$error.maxlength">-->
-<!--                                <span class="req">Invalid Enroll</span>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <input type="number" name="enrollNumber" class="form-control" ng-model="vm.enrollNumber"-->
-<!--                               placeholder="18804034" ng-maxlength="10" enroll-num required/>-->
-<!--                        <div ng-show="form.enrollNumber.$pending.enrollNumber">-->
-<!--                            <span>Checking if already exists...</span></div>-->
-<!--                        <div ng-show="form.enrollNumber.$error.enrollNumber">-->
-<!--                            <span> This Enroll already exists...</span></div>-->
-
-<!--                    </div>-->
-<!--                    <div class="input-field">-->
-<!--                        <i class="fas fa-envelope"></i>-->
-<!--                        <label>Email : </label><span class="req">* </span>-->
-<!--                        <div ng-show="form.email.$touched || form.$submitted">-->
-<!--                            <div ng-show="form.email.$error.required"><span class="req">Email is required</span></div>-->
-<!--                            <div ng-show="form.email.$error.email">-->
-<!--                                <span class="req"> Invalid Email</span>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <input type="email" name="email" class="form-control" ng-model="vm.user.email" ng-blur="vm.setName();"-->
-<!--                               placeholder="abc@td.com" overwrite-email required>-->
-<!--                    </div>-->
-
-<!--                    <div class="row input-field">-->
-<!--                        &lt;!&ndash;                        <div class="col-sm-12 col-md-12 col-lg-4 dropdown">&ndash;&gt;-->
-<!--                        &lt;!&ndash;                            <label>branch</label>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                            <span class="req">* </span>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                            <br class="hidden-xs">&ndash;&gt;-->
-<!--                        &lt;!&ndash;                            <select id="branch" class="btn btn-secondary btn-sm dropdown-toggle" required&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                    onchange="enableDegree();">&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                    <option class="dropdown-item">None</option>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                    <option class="dropdown-item" value="cs">Computer Science</option>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                    <option class="dropdown-item">Commerce</option>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                </div>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                            </select>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                        </div>&ndash;&gt;-->
-
-<!--                        &lt;!&ndash;                        <div class="col-sm-12 col-md-12 col-lg-4 dropdown change_ori">&ndash;&gt;-->
-<!--                        &lt;!&ndash;                            <label>Degree</label>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                            <span class="req">* </span>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                            <br class="hidden-xs">&ndash;&gt;-->
-<!--                        &lt;!&ndash;                            <select id="degree" class="btn btn-secondary btn-sm dropdown-toggle" required disabled>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                    <div class="form-group">&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                        <option class="dropdown-item">None</option>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                        <option class="dropdown-item" value="0">Btech</option>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                        <option class="dropdown-item" value="1">Mtech</option>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                        <option class="dropdown-item" value="2">BBA</option>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                        <option class="dropdown-item" value="more">MBA</option>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                    </div>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                                </div>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                            </select>&ndash;&gt;-->
-<!--                        &lt;!&ndash;                        </div>&ndash;&gt;-->
-<!--                    </div>-->
-<!--                    <div class="input-field">-->
-<!--                        <i class="fas fa-lock"></i>-->
-<!--                        <label>Password:</label>-->
-<!--                        <span class="req">* </span>-->
-<!--                        <div ng-show="form.password.$touched || form.$submitted">-->
-<!--                            <div ng-show="form.password.$error.required"><span class="req">Password is required</span>-->
-<!--                            </div>-->
-<!--                            <div ng-show="form.password.$error.password">-->
-<!--                                <span class="req"> Invalid Password</span>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <input type="password" name="password" ng-model="vm.user.originalPassword" class="form-control"-->
-<!--                               placeholder="Abcd1234" password required>-->
-<!--                        <small id="passHelp" class="form-text text-muted">min length (5) at least one capital, one small-->
-<!--                            alhabet and one digit is required </small>-->
-<!--                        &lt;!&ndash;                        <p ng-show="form.uPassword.$error.required && (form.uPassword.$touched || submitted)"&ndash;&gt;-->
-<!--                        &lt;!&ndash;                           class="help-block">You password is required.</p>&ndash;&gt;-->
-<!--                    </div>-->
-<!--                    <div class="input-field">-->
-<!--                        <i class="fas fa-lock"></i>-->
-<!--                        <label>Confirm Password:</label>-->
-<!--                        <span class="req">*  </span>-->
-<!--                        <input type="password" ng-model="vm.confirmPass" class="form-control" name="confirmPass" compare-to="vm.user.originalPassword"-->
-<!--                               ng-maxlength="8" required>-->
-<!--                        <div ng-show="form.confirmPass.$touched || form.$submitted">-->
-<!--                            <div ng-show="form.confirmPass.$error.required"><span class="req">Password is required</span>-->
-<!--                            </div>-->
-<!--                            <div ng-show="form.confirmPass.$error.compareTo">-->
-<!--                                <span class="req"> Invalid Password</span>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="input-field">-->
-<!--                        <div class="form-check form-check-inline">-->
-<!--                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"-->
-<!--                                   value="option1" required>-->
-<!--                            <label class="form-check-label" for="inlineRadio1">1</label>-->
-<!--                        </div>-->
-<!--                        <div class="form-check form-check-inline">-->
-<!--                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"-->
-<!--                                   value="option2" required>-->
-<!--                            <label class="form-check-label" for="inlineRadio2">2</label>-->
-<!--                        </div>-->
-<!--                        <div class="form-check form-check-inline">-->
-<!--                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"-->
-<!--                                   value="option3"  required>-->
-<!--                            <label class="form-check-label" for="inlineRadio3">3 </label>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <h6 class="input-field">Hobbies:</h6>-->
-<!--                    <div contentEditable="true" ng-model="vm.content" title="Click to edit">coding</div>-->
-<!--                    <div>-->
-<!--                        <br>-->
-<!--                        <label class="input-field" for="myfile">Select Resume:</label>-->
-<!--                        <br>-->
-<!--                        <input type="file" id="myfile" name="myfile" check-file-size="" ng-model="vm.user.fileSize" required><br><br>-->
-<!--                        <p>{{vm.user.fileSize}}</p>-->
-<!--                        <div ng-show="form.myfile.$error.required && form.myfile.$touched">File must be chosen<10MB</div>-->
-<!--                    </div>-->
-<!--                    <p align="right">I enjoy {{vm.content}}</p>-->
-
-<!--                </div>-->
-<!--                <button type="submit" class="btn btn-primary"-->
-<!--                        style=" margin-left: 10%; margin-bottom: 2%;">Submit-->
-<!--                </button>-->
-<!--            </div>-->
-<!--        </form>-->
-<!--        <div class="col"></div>-->
-<!--    </div>-->
-<!--</div>-->
-
-<div >
-    <ui-view></ui-view>
-</div>
+<ui-view></ui-view>
 
 
 <script src="../lib/angular.min.js"></script>
 <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
-<script src="../src/registrationForm/registration.module.js"></script>
-<script src="../src/registrationForm/registration.controller.js"></script>
-<script src="../src/registrationForm/registration.config.js"></script>
-<script src="../src/registrationForm/registrationDirectives/overwrite-email.directive.js"></script>
-<script src="../src/registrationForm/registrationDirectives/enrollNumber.directive.js"></script>
-<script src="../src/registrationForm/registrationDirectives/password.directive.js"></script>
-<script src="../src/registrationForm/registrationDirectives/contentEditable.directive.js"></script>
-<script src="../src/registrationForm/registrationDirectives/confirmPassword.directive.js"></script>
-<script src="../src/registrationForm/registrationDirectives/fileSize.directive.js"></script>
-<script src="../js/script.js"></script>
+
+<script src="./registration.module.bundle.js"></script>
+
+<script src="../src/registration.controller.js"></script>
+<script src="../src/registration.config.js"></script>
+<script src="../src/registrationDirectives/overwrite-email.directive.js"></script>
+<script src="../src/registrationDirectives/enrollNumber.directive.js"></script>
+<script src="../src/registrationDirectives/password.directive.js"></script>
+<script src="../src/registrationDirectives/contentEditable.directive.js"></script>
+<script src="../src/registrationDirectives/confirmPassword.directive.js"></script>
+<script src="../src/registrationDirectives/fileSize.directive.js"></script>
 
 
 </body>
