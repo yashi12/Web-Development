@@ -1,5 +1,8 @@
 import {configApp} from "./registration.config.js";
 import moduleApp from "./registration.module.js";
+import Icon from '../images/registrationFormSide.jpeg';
+
+
 export let controllerApp = configApp
     .controller('FormController', FormController);
 
@@ -13,11 +16,15 @@ function FormController() {
         confirmPassword: "",
         originalPassword:"",
         fileSize:"",
-        sideImage:""
+        sideImage:"../images/registrationFormSide.jpeg"
     };
     vm.setName = setName;
     vm.setIfNameEntered = setIfNameEntered;
     vm.checkIfEmailPresent = checkIfEmailPresent;
+
+    const myIcon = new Image();
+    myIcon.src = Icon;
+    document.getElementById('sideImageDiv').appendChild(myIcon);
 
     function setName() {
         console.log(typeof (vm.user.email));

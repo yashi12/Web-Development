@@ -41,6 +41,12 @@ module.exports = {
                 enforce: 'pre',
                 use: ['source-map-loader'],
             },
+            {
+                test: /\.(png|svg|jpe?g|gif)$/i,
+                use:[
+                    'file-loader',
+                ],
+            },
         ],
     }
 };
