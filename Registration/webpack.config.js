@@ -11,7 +11,7 @@ module.exports = {
         fileSizeDirective: './src/registrationDirectives/fileSize.directive.js',
         overwriteEmailDirective: './src/registrationDirectives/overwriteEmail.directive.js',
         passwordDirective: './src/registrationDirectives/password.directive.js',
-        registrationController:'./src/registration.controller.js'
+        // registrationController:'./src/registration.controller.js'
 
     },
     output: {
