@@ -11,8 +11,8 @@ function registrationConfig($stateProvider,$urlRouterProvider) {
         .state('form',{
             url:'',
             controller:'FormController as vm',
-            // template:require('../dist/registrationFormTemplate.html'),
-            template:'<h1>hello</h1>',
+            template:require('../dist/registrationFormTemplate.html'),
+            // template:'<h1>hello</h1>',
         });
     $urlRouterProvider.otherwise('');
 }

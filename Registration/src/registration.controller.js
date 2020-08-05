@@ -1,6 +1,6 @@
 import {configApp} from "./registration.config.js";
 import moduleApp from "./registration.module.js";
-export let controllerApp = moduleApp
+export let controllerApp = configApp
     .controller('FormController', FormController);
 
 
@@ -12,7 +12,8 @@ function FormController() {
         email: "",
         confirmPassword: "",
         originalPassword:"",
-        fileSize:""
+        fileSize:"",
+        sideImage:""
     };
     vm.setName = setName;
     vm.setIfNameEntered = setIfNameEntered;
@@ -25,6 +26,7 @@ function FormController() {
             console.log(name);
             vm.user.name = name;
         }
+        console.log("setName");
     }
 
     function setIfNameEntered() {
@@ -33,12 +35,14 @@ function FormController() {
         } else {
             vm.user.nameEntered = false;
         }
+        console.log("setIfNameEntered");
     }
 
     function checkIfEmailPresent() {
         if (vm.user.email != "" && vm.user.name == "" && typeof(vm.user.email)!=='undefined') {
             let name = vm.user.email.substring(0, vm.user.email.indexOf('@'));
             vm.user.name = name;
+            console.log("checkIfEmailPresent");
         }
     }
 
