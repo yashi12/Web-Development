@@ -1,8 +1,8 @@
-angular
-    .module('registrationForm')
+import {moduleApp} from "../registration.module.js";
+
+export let controllerApp = moduleApp
     .controller('FormController', FormController);
 
-// FormController.$inject = ['$timeout'];
 
 function FormController() {
     const vm = this;

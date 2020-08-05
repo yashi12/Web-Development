@@ -5,10 +5,15 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     mode:'development',
     entry: {
-        module:'src/registration.module.js',
+        confirmPassword:'./src/registrationDirectives/confirmPassword.directive.js',
+        contentEditable:'./src/registrationDirectives/contentEditable.directive.js',
+        enrollNumber:'./src/registrationDirectives/enrollNumber.directive.js',
+        fileSize:'./src/registrationDirectives/fileSize.directive.js',
+        overwriteEmail:'./src/registrationDirectives/overwriteEmail.directive.js',
+        password:'./src/registrationDirectives/password.directive.js'
     },
     output: {
-        filename: 'registration.[name].bundle.js',
+        filename: '[name].directive.bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
     devtool: 'inline-source-map',

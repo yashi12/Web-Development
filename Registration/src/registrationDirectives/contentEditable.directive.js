@@ -1,24 +1,26 @@
-(function(angular) {
+
+import {controllerApp} from "../registration.controller.js";
+
+(function (angular) {
     'use strict';
-    angular
-        .module('registrationForm')
-        .directive('contenteditable', function() {
-        return {
-            require: 'ngModel',
-            link: function(scope, elm, attrs, ctrl) {
-                // view -> model
-                elm.on('blur', function() {
+    controllerApp
+        .directive('contenteditable', function () {
+            return {
+                require: 'ngModel',
+                link: function (scope, elm, attrs, ctrl) {
+                    // view -> model
+                    elm.on('blur', function () {
+                        ctrl.$setViewValue(elm.html());
+                    });
+
+                    // model -> view
+                    ctrl.$render = function () {
+                        elm.html(ctrl.$viewValue);
+                    };
+
+                    // load init value from DOM
                     ctrl.$setViewValue(elm.html());
-                });
-
-                // model -> view
-                ctrl.$render = function() {
-                    elm.html(ctrl.$viewValue);
-                };
-
-                // load init value from DOM
-                ctrl.$setViewValue(elm.html());
-            }
-        };
-    });
+                }
+            };
+        });
 })(window.angular);

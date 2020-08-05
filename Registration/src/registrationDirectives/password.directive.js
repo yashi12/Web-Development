@@ -1,5 +1,7 @@
-angular
-    .module('registrationForm')
+
+import {controllerApp} from "../registration.controller.js";
+
+controllerApp
     .directive('password', password);
 
 function password() {

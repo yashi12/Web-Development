@@ -1,5 +1,6 @@
-angular
-    .module('registrationForm')
+import {moduleApp} from "registration.module.js";
+
+export let configApp = moduleApp
     .config(registrationConfig);
 
 registrationConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
