@@ -1,5 +1,5 @@
-import {moduleApp} from "../registration.module.js";
-
+import {configApp} from "./registration.config.js";
+import moduleApp from "./registration.module.js";
 export let controllerApp = moduleApp
     .controller('FormController', FormController);
 

@@ -1,5 +1,8 @@
 import './registrationForm.css';
-let angular = require('angular');
-export let moduleApp = angular
-    .module('registrationForm', ['ui.router']);
+import angular from 'angular';
+import uiRouter from '@uirouter/angularjs';
 
+const moduleApp = angular
+    .module('registrationForm', [uiRouter]);
+
+export default moduleApp;

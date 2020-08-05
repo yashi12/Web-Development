@@ -1,16 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
-    mode:'development',
+    mode: 'development',
     entry: {
-        confirmPassword:'./src/registrationDirectives/confirmPassword.directive.js',
-        contentEditable:'./src/registrationDirectives/contentEditable.directive.js',
-        enrollNumber:'./src/registrationDirectives/enrollNumber.directive.js',
-        fileSize:'./src/registrationDirectives/fileSize.directive.js',
-        overwriteEmail:'./src/registrationDirectives/overwriteEmail.directive.js',
-        password:'./src/registrationDirectives/password.directive.js'
+        confirmPassword: './src/registrationDirectives/confirmPassword.directive.js',
+        contentEditable: './src/registrationDirectives/contentEditable.directive.js',
+        enrollNumber: './src/registrationDirectives/enrollNumber.directive.js',
+        fileSize: './src/registrationDirectives/fileSize.directive.js',
+        overwriteEmail: './src/registrationDirectives/overwriteEmail.directive.js',
+        password: './src/registrationDirectives/password.directive.js'
     },
     output: {
         filename: '[name].directive.bundle.js',
@@ -18,16 +18,27 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase:'./dist',
+        contentBase: './dist',
     },
     plugins: [
         // new HtmlWebpackPlugin(),
-        new CleanWebpackPlugin(),
+        // new CleanWebpackPlugin(),
     ],
     module: {
-        rules: [{
-            test: /\.css$/,
-            use: ['style-loader', 'css-loader'],
-        }]
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.html$/,
+                loader: 'html-loader',
+            },
+            {
+                test: /\.js$/,
+                enforce: 'pre',
+                use: ['source-map-loader'],
+            },
+        ],
     }
 };

@@ -1,4 +1,5 @@
-import {moduleApp} from "registration.module.js";
+import moduleApp from "./registration.module.js";
+import '../dist/registrationFormTemplate.html';
 
 export let configApp = moduleApp
     .config(registrationConfig);
@@ -10,8 +11,8 @@ function registrationConfig($stateProvider,$urlRouterProvider) {
         .state('form',{
             url:'',
             controller:'FormController as vm',
-            templateUrl:'../dist/registrationFormTemplate.html',
-            // template:'<h1>hello</h1>',
+            // template:require('../dist/registrationFormTemplate.html'),
+            template:'<h1>hello</h1>',
         });
     $urlRouterProvider.otherwise('');
 }
