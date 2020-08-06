@@ -17,7 +17,10 @@ module.exports = {
         contentBase: './dist',
     },
     plugins: [
-        // new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            title: "Webpack App",
+            template: "./dist/mainPageTemplate.html"
+        }),
         // new CleanWebpackPlugin(),
     ],
     module: {
