@@ -18,8 +18,9 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: "Webpack App",
-            template: "./dist/mainPageTemplate.html"
+            template: "./dist/mainPageTemplate.html",
+            title: "Registration Form",
+            hash: true
         }),
         // new CleanWebpackPlugin(),
     ],
