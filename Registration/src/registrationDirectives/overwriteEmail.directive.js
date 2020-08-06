@@ -1,8 +1,8 @@
-
-import {controllerApp} from "../registration.controller.js";
-
-controllerApp
-    .directive('overwriteEmail', overwriteEmail);
+//
+// import {controllerApp} from "../registration.controller.js";
+//
+// controllerApp
+//     .directive('overwriteEmail', overwriteEmail);
 
 function overwriteEmail() {
 
@@ -24,3 +24,5 @@ function overwriteEmail() {
         }
     }
 }
+
+export default overwriteEmail;

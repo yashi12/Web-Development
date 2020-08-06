@@ -1,8 +1,8 @@
-import moduleApp from "./registration.module.js";
-import '../dist/registrationFormTemplate.html';
-
-export let configApp = moduleApp
-    .config(registrationConfig);
+// import moduleApp from "./registration.module.js";
+// import '../dist/registrationFormTemplate.html';
+//
+// export let configApp = moduleApp
+//     .config(registrationConfig);
 
 registrationConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -16,3 +16,4 @@ function registrationConfig($stateProvider,$urlRouterProvider) {
         });
     $urlRouterProvider.otherwise('');
 }
+export default registrationConfig;

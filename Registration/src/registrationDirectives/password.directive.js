@@ -1,8 +1,8 @@
 
-import {controllerApp} from "../registration.controller.js";
-
-controllerApp
-    .directive('password', password);
+// import {controllerApp} from "../registration.controller.js";
+//
+// controllerApp
+//     .directive('password', password);
 
 function password() {
 
@@ -20,3 +20,5 @@ function password() {
         }
     }
 }
+
+export default password;

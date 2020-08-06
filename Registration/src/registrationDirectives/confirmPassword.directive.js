@@ -1,8 +1,8 @@
-
-import {controllerApp} from "../registration.controller.js";
-
-controllerApp
-    .directive('compareTo', compareTo);
+//
+// import {controllerApp} from "../registration.controller.js";
+//
+// controllerApp
+//     .directive('compareTo', compareTo);
 
 
 function compareTo() {
@@ -28,3 +28,4 @@ function compareTo() {
         }
     };
 }
+export default compareTo;

@@ -6,13 +6,14 @@ module.exports = {
     mode: 'development',
     entry: {
         frontendPackages:'./src/frontend.packages.js',
+        mainModule:'./src/registration.module.js',
 
-        confirmPasswordDirective: './src/registrationDirectives/confirmPassword.directive.js',
-        contentEditableDirective: './src/registrationDirectives/contentEditable.directive.js',
-        enrollNumberDirective: './src/registrationDirectives/enrollNumber.directive.js',
-        fileSizeDirective: './src/registrationDirectives/fileSize.directive.js',
-        overwriteEmailDirective: './src/registrationDirectives/overwriteEmail.directive.js',
-        passwordDirective: './src/registrationDirectives/password.directive.js',
+        // confirmPasswordDirective: './src/registrationDirectives/confirmPassword.directive.js',
+        // contentEditableDirective: './src/registrationDirectives/contentEditable.directive.js',
+        // enrollNumberDirective: './src/registrationDirectives/enrollNumber.directive.js',
+        // fileSizeDirective: './src/registrationDirectives/fileSize.directive.js',
+        // overwriteEmailDirective: './src/registrationDirectives/overwriteEmail.directive.js',
+        // passwordDirective: './src/registrationDirectives/password.directive.js',
         // registrationController:'./src/registration.controller.js'
 
     },

@@ -1,10 +1,10 @@
-import {configApp} from "./registration.config.js";
+// import {configApp} from "./registration.config.js";
 import moduleApp from "./registration.module.js";
 import Icon from '../images/registrationFormSide.jpeg';
 
 
-export let controllerApp = configApp
-    .controller('FormController', FormController);
+// export let controllerApp = configApp
+//     .controller('FormController', FormController);
 
 
 function FormController() {
@@ -67,3 +67,4 @@ function FormController() {
     // }
 
 }
+export default FormController;
