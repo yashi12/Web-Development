@@ -1,11 +1,4 @@
-// import {configApp} from "./registration.config.js";
-import moduleApp from "./registration.module.js";
 import Icon from '../images/registrationFormSide.jpeg';
-
-
-// export let controllerApp = configApp
-//     .controller('FormController', FormController);
-
 
 function FormController() {
     const vm = this;
@@ -53,18 +46,6 @@ function FormController() {
             console.log("checkIfEmailPresent");
         }
     }
-
-    //
-    // function confirmPassword() {
-    //     if (vm.originalPassword === vm.confirmPass) {
-    //         console.log(vm.originalPassword,vm.confirmPass);
-    //         console.log("true");
-    //         return true;
-    //     }
-    //     console.log(vm.originalPassword,vm.confirmPass);
-    //     console.log("false");
-    //     return false;
-    // }
 
 }
 export default FormController;

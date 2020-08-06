@@ -1,8 +1,3 @@
-//
-// import {controllerApp} from "../registration.controller.js";
-//
-// controllerApp
-//     .directive('enrollNum', enrollNum);
 
 enrollNum.$inject = ['$q', '$timeout'];
 

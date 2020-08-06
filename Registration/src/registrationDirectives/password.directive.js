@@ -1,9 +1,4 @@
 
-// import {controllerApp} from "../registration.controller.js";
-//
-// controllerApp
-//     .directive('password', password);
-
 function password() {
 
     let PASS_REGEXP =  /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{5,}$/;

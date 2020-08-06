@@ -1,9 +1,3 @@
-//
-// import {controllerApp} from "../registration.controller.js";
-//
-// controllerApp
-//     .directive('compareTo', compareTo);
-
 
 function compareTo() {
     return {

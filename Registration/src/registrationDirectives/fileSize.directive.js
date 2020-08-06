@@ -1,8 +1,4 @@
 
-// import {controllerApp} from "../registration.controller.js";
-//
-// controllerApp
-//     .directive('checkFileSize', checkFileSize)
 
 function checkFileSize() {
     let directive = {
