@@ -11,7 +11,7 @@
                 <div class="form-group">
                     <div class="input-field">
                         <i class="fas fa-user-circle"></i>
-                        <label>Name : </label>
+                        <label>Name :</label>
                         <input type="text" ng-model="vm.user.name" class="form-control" name="name" ng-blur="vm.setIfNameEntered(); vm.checkIfEmailPresent();"
                                placeholder="Your Name">
                     </div>
@@ -128,8 +128,8 @@
                             <label class="form-check-label" for="inlineRadio3">3 </label>
                         </div>
                     </div>
-                    <h6 class="input-field">Hobbies:</h6>
-                    <div contentEditable="true" ng-model="vm.content" title="Click to edit">coding</div>
+                    <h6 class="input-field">Hobbies:{{vm.user.content}}</h6>
+                    <div contenteditable ng-model="vm.user.content" title="Click to edit">coding</div>
                     <div>
                         <br>
                         <label class="input-field" for="myfile">Select Resume:</label>
@@ -138,7 +138,7 @@
                         <p>{{vm.user.fileSize}}</p>
                         <div ng-show="form.myfile.$error.required && form.myfile.$touched">File must be chosen<10MB</div>
                     </div>
-                    <p align="right">I enjoy {{vm.content}}</p>
+                    <p align="right">I enjoy {{vm.user.content}}</p>
 
                 </div>
                 <button type="submit" class="btn btn-primary"

@@ -16,7 +16,8 @@ function FormController() {
         confirmPassword: "",
         originalPassword:"",
         fileSize:"",
-        sideImage:"../images/registrationFormSide.jpeg"
+        sideImage:"../images/registrationFormSide.jpeg",
+        content:"",
     };
     vm.setName = setName;
     vm.setIfNameEntered = setIfNameEntered;

@@ -5,6 +5,8 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
+        frontendPackages:'./src/frontend.packages.js',
+
         confirmPasswordDirective: './src/registrationDirectives/confirmPassword.directive.js',
         contentEditableDirective: './src/registrationDirectives/contentEditable.directive.js',
         enrollNumberDirective: './src/registrationDirectives/enrollNumber.directive.js',
