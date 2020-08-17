@@ -137,7 +137,7 @@
                         <br>
                         <input type="file" id="myfile" name="myfile" check-file-size="" ng-model="vm.user.fileSize" required><br><br>
                         <p>{{vm.user.fileSize}}</p>
-                        <div ng-show="form.myfile.$error.required && form.myfile.$touched">File must be chosen<10MB</div>
+                        <div ng-show="form.myfile.$error.required && form.myfile.$touched">File must be chosen less than 10MB</div>
                     </div>
                     <p align="right">I enjoy {{vm.user.content}}</p>
 
