@@ -1,4 +1,5 @@
 import './registrationForm.css';
+import './frontend.packages.js';
 
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';

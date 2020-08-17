@@ -1,4 +1,4 @@
-// import moduleApp from "./registration.module.js";
+// import moduleApp from "./index.js";
 // import '../dist/registrationFormTemplate.html';
 //
 // export let configApp = moduleApp
